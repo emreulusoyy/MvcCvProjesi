@@ -1,0 +1,28 @@
+﻿@using MvcCv.Models.Entitiy
+@model List<TblHakkimda>
+@{
+    Layout = null;
+}
+
+@foreach (var x in Model)
+{
+    <section class="resume-section" id="about">
+        <div class="resume-section-content">
+            <h1 class="mb-0">
+                @x.Ad
+                <span class="text-primary">@x.Soyad</span>
+            </h1>
+            <div class="subheading mb-5">
+                @x.Adres · @x.Telefon
+                <a href="@x.Mail">@x.Mail</a>
+            </div>
+            <p class="lead mb-5">@x.Açıklama</p>
+            <div class="social-icons">
+                <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
+                <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </section>
+}

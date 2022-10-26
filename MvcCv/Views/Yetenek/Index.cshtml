@@ -1,0 +1,80 @@
+﻿@using MvcCv.Models.Entitiy
+@model List<TblYeteneklerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <a class="btn btn-info" href="/Yetenek/YeniYetenek/">Yeni Yetenek Ekle</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Yetenek</th>
+                                            <th style="width:550px">Derece</th>
+                                            <th style="width: 90px">Oran</th>
+                                            <th style="width:150px">Düzenle</th>
+                                            <th style="width:150px">Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach(var item in Model) {
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Yetenek</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: @item.Oran%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-warning">@item.Oran %</span></td>
+                                            <td>
+                                                <a class="btn btn-info btn-sm" href="/Yetenek/YetenekDuzenle/@item.ID">
+                                                    <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                    Düzenle
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-danger btn-sm" href="/Yetenek/YetenekSil/@item.ID">
+                                                    <i class="fas fa-trash">
+                                                    </i>
+                                                    Sil
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        }
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>
