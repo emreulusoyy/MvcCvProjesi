@@ -21,6 +21,7 @@ namespace MvcCv.Controllers
         public ActionResult SertifikaGetir(int id)
         {
             var sertifika = repo.Find(x => x.ID == id);
+            ViewBag.d = id;
             return View(sertifika);
         }
 
@@ -48,9 +49,6 @@ namespace MvcCv.Controllers
         public ActionResult SertifikaSil(int id)
         {
             var sertifika = repo.Find(x => x.ID == id);
-            DbCvEntities1 db = new DbCvEntities1();
-            var deger = db.TblSertifika.Where(x => x.ID == id).Select(y => y.ID).FirstOrDefault();
-            ViewBag.d = deger;
             repo.tDelete(sertifika);
             return RedirectToAction("Index");
         }

@@ -9,6 +9,7 @@ using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
+    
     public class EgitimController : Controller
     {
         GenericRepositories<TblEgitimlerim> repo = new GenericRepositories<TblEgitimlerim>();

@@ -10,7 +10,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="KullniciAdi" Type="varchar" MaxLength="20" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="20" />
           <Property Name="Sifre" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TblDeneyimlerim">
@@ -96,14 +96,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="TblAdmin">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KullniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="TblDeneyimlerim">
           <Key>
             <PropertyRef Name="ID" />
@@ -174,7 +166,6 @@
           <Property Name="Oran" Type="Byte" />
         </EntityType>
         <EntityContainer Name="DbCvEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" />
           <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" />
           <EntitySet Name="TblEgitimlerim" EntityType="Self.TblEgitimlerim" />
           <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" />
@@ -182,22 +173,22 @@
           <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" />
           <EntitySet Name="TblSertifika" EntityType="Self.TblSertifika" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" />
+          <EntitySet Name="TblAdmin" EntityType="DbCvModel.TblAdmin" />
         </EntityContainer>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities1">
-          <EntitySetMapping Name="TblAdmin">
-            <EntityTypeMapping TypeName="DbCvModel.TblAdmin">
-              <MappingFragment StoreEntitySet="TblAdmin">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="KullniciAdi" ColumnName="KullniciAdi" />
-                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblDeneyimlerim">
             <EntityTypeMapping TypeName="DbCvModel.TblDeneyimlerim">
               <MappingFragment StoreEntitySet="TblDeneyimlerim">
@@ -271,6 +262,15 @@
                 <ScalarProperty Name="Oran" ColumnName="Oran" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbCvModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

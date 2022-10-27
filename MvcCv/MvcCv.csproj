@@ -133,6 +133,8 @@
     <Compile Include="Controllers\EgitimController.cs" />
     <Compile Include="Controllers\HakkimdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\iletisimController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SertifikaController.cs" />
     <Compile Include="Controllers\YetenekController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2041,6 +2043,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Report-Login-Free\css\font-awesome.min.css" />
+    <Content Include="Report-Login-Free\css\style.css" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.svg" />
+    <Content Include="Report-Login-Free\images\1.png" />
+    <Content Include="Report-Login-Free\images\undraw_Work_time_re_hdyv.svg" />
+    <Content Include="Report-Login-Free\index.html" />
+    <Content Include="Report-Login-Free\starter-license-W3Layouts.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Entitiy\Model1.edmx">
@@ -2305,6 +2314,11 @@
     <Content Include="AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="AdminLTE-3.0.4\README.md" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.eot" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.woff" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Report-Login-Free\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2357,6 +2371,8 @@
     <Content Include="Views\Sertifika\Index.cshtml" />
     <Content Include="Views\Sertifika\YeniSertifika.cshtml" />
     <Content Include="Views\Sertifika\SertifikaGetir.cshtml" />
+    <Content Include="Views\iletisim\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

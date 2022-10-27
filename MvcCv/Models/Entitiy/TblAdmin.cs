@@ -15,7 +15,7 @@ namespace MvcCv.Models.Entitiy
     public partial class TblAdmin
     {
         public int ID { get; set; }
-        public string KullniciAdi { get; set; }
+        public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
     }
 }
