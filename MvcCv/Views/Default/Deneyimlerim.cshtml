@@ -1,0 +1,25 @@
+﻿@*@using MvcCv.Models.Entitiy
+@model List<TblDeneyimlerim>
+@{
+    Layout = null;
+}
+
+    <div class="experience-info">
+        @foreach (var x in Model)
+        {
+            <div class="col-md-7 exp-matter">
+                <div class="exp-left back-shadow" style="background-color:orange">
+                  
+                        <h6>@x.Tarih</h6>
+                        <h5>@x.Baslik</h5>
+                        <p>@x.Acıklama</p>
+                 
+                </div>
+
+            </div>
+            <div class="col-md-5 exp-info-right">
+                <h4>Deneyimlerim</h4>
+            </div>
+            <div class="clearfix"></div>
+        }
+    </div>*@

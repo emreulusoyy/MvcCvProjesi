@@ -3,25 +3,98 @@
 @{
     Layout = null;
 }
-
-@foreach (var x in Model)
-{
-    <section class="resume-section" id="about">
-        <div class="resume-section-content">
-            <h1 class="mb-0">
-                @x.Ad
-                <span class="text-primary">@x.Soyad</span>
-            </h1>
-            <div class="subheading mb-5">
-                @x.Adres · @x.Telefon
-                <a href="@x.Mail">@x.Mail</a>
-            </div>
-            <p class="lead mb-5">@x.Açıklama</p>
-            <div class="social-icons">
-                <a class="social-icon" href="https://www.linkedin.com/in/emreulusoy-/"><i class="fab fa-linkedin-in"></i></a>
-                <a class="social-icon" href="https://github.com/emreulusoyy"><i class="fab fa-github"></i></a>
-                
-            </div>
+<div class="about" id="about">
+    <div class="container">
+        <div class="col-md-4 about-left ">
+            <img src="~/web/images/WhatsApp Image 2022-11-01 at 03.21.17.jpeg" class="img-responsive" alt="">
         </div>
-    </section>
-}
+        <div class="col-md-7 about-right">
+            @foreach(var x in Model) {
+            <div class="about-me">
+                <h2>@x.Ad @x.Soyad </h2>
+                <h4>@x.Açıklama</h4>
+            </div>
+            <div class="w3layouts_more-buttn">
+                <p>
+                    Herkese Merhaba. Bir web geliştiriciyim. Bunun yanında Bilimkurgu ve Fantatik türündeki birçok film ve tv programı takip ediyorum. Tutkulu bir Galatasaraylıyım :) Zamanımın büyük bir kısmını kişisel gelişimim ile tamamlıyor, son teknolojik gelişmelerin takibini yapıyorum.
+                </p>
+                <div class="buttn-about">
+                    <a href="#services">Daha Fazla</a>
+                </div>
+               
+                <div class="buttom-social-grids">
+
+                    <ul>
+                        <li><a href="https://www.instagram.com/emreyulusoy/"><span class="fa fa-instagram"></span></a></li>
+                        <li><a href="https://github.com/emreulusoyy"><span class="fa fa-github"></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/emreulusoy-/"><span class="fa fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="clearfix"> </div>
+        <div class="my-ser-info">
+            <div class="col-md-5 my-datas">
+                <h3>Kişisel Verilerim</h3>
+                @foreach(var y in Model) {
+                <ul class="address">
+                    <li>
+                        <ul class="address-text ">
+                            <li><b>İsim </b></li>
+                            <li>@y.Ad @y.Soyad</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="address-text">
+                            <li><b>Telefon </b></li>
+                            <li>@y.Telefon</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="address-text">
+                            <li><b>Adres </b></li>
+                            <li>@y.Adres</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="address-text">
+                            <li><b>E-MAİL </b></li>
+                            <li><a href="@y.Mail">@y.Mail</a></li>
+                        </ul>
+                    </li>
+                   
+                </ul>
+                }
+               
+            </div>
+            <div class="col-md-7 aboutmy-services">
+
+                <div class="col-md-6 col-sm-6 col-xs-6 about-ser-grid">
+                    <div class="about-gap">
+                        <span class="fa fa-television" aria-hidden="true"></span>
+                        <h3>Web Tasarım</h3>
+                        <p></p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 about-ser-grid">
+                    <div class="about-gap clr-green">
+                        <span class="fa fa-database" aria-hidden="true"></span>	
+                        <h3>Web Geliştirme</h3>
+                        <p></p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+               
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+
+    </div>
+
+
+

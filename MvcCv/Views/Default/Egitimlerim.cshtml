@@ -1,28 +1,30 @@
 ﻿@using MvcCv.Models.Entitiy
 @model List<TblEgitimlerim>
-<div class="resume-section-content">
-    <h2 class="mb-5">Eğitim Hayatım</h2>
-    @foreach (var x in Model)
-    {
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-
-                <h3 class="mb-0">@x.Baslık</h3>
-                <div class="subheading mb-3">@x.AltBaslık1</div>
-                <div>@x.AltBaslık2</div>
-                <p>GNO: @x.GNO</p>
+<div class="experience" id="experience">
+    <div class="container">
+        <div class="education">
+            <div class="col-md-5 education-info">
+                <h4>Eğitimlerim</h4>
             </div>
-            <div class="flex-shrink-0"><span class="text-primary">@*@x.Tarih*@</span></div>
+            <div class="col-md-7 education-matter">
+                @foreach (var x in Model)
+                {
+                    <div class="edu-right back-shadow ">
+                       
+                            <h6>@(((DateTime)x.Tarih).ToString("dd-MMM-yyyy")) </h6>
+                            <h5>@x.Baslık @x.AltBaslık2</h5>
+                            <p>@x.AltBaslık1</p>
+                      
+                    </div>
+
+                }
+            </div>
+
         </div>
-        <!--<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
+        <div class="clearfix"></div>
+        @Html.Action("Deneyimlerim")
+    </div>
+  
+       
+    </div>
 
-                <h3 class="mb-0">@x.Baslık</h3>
-                <div class="subheading mb-3">@x.AltBaslık1</div>
-                <div>@x.AltBaslık2</div>
-                <p>GNO: @x.GNO</p>
-            </div>
-            <div class="flex-shrink-0"><span class="text-primary">-->@*@x.Tarih*@<!--</span></div>
-        </div>-->
-    }
-</div>

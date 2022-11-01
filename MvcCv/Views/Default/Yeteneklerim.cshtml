@@ -1,29 +1,69 @@
 ﻿@using MvcCv.Models.Entitiy
-@model List<TblYeteneklerim>  
-<div class="resume-section-content">
-    <h2 class="mb-5">Yeteneklerim</h2>
-    <div class="subheading mb-3">Programlama Dilleri </div>
-    <ul class="list-inline dev-icons">
-        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-        <li class="list-inline-item"><i class="fab fa-angular"></i></li>
-        <li class="list-inline-item"><i class="fab fa-react"></i></li>
-        <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-        <li class="list-inline-item"><i class="fab fa-sass"></i></li>
-        <li class="list-inline-item"><i class="fab fa-less"></i></li>
-        <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-        <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
-        <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
-        <li class="list-inline-item"><i class="fab fa-npm"></i></li>
-    </ul>
-    <div class="subheading mb-3">Dijital Yeteneklerim</div>
-    <ul class="fa-ul mb-0">
-        @foreach(var x in Model) {
-        <li>
-            <span class="fa-li"><i class="fas fa-check"></i></span>
-            @x.Yetenek
-        </li>
-        }
-    </ul>
+@model List<TblYeteneklerim>
+
+
+<div class="services" id="services">
+    <div class="container">
+        <h3 class="title clr">Yeteneklerim & Sertifikalarım</h3>
+        <div class="banner-bottom-girds">
+
+            <div class="col-md-5 my-ser-right">
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-grid stats-grid-1">
+                    <div class="ser-icone">
+                        <span class="fa fa-users font" aria-hidden="true"></span>
+
+                        <div class="counter">688</div>
+                        <div class="stat-info-w3ls">
+                            <h4>Bağlantılar</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-grid stats-grid-2">
+                    <div class="ser-icone clr-green">
+                        <span class="fa fa-coffee font" aria-hidden="true"></span>
+                        <div class="counter">55</div>
+                        <div class="stat-info-w3ls">
+                            <h4>Görüşmeler</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-grid stats-grid-3">
+                    <div class="ser-icone clr-green">
+                        <span class="fa fa-trophy font" aria-hidden="true"></span>
+
+                        <div class="counter">9</div>
+                        <div class="stat-info-w3ls">
+                            <h4>Sertifikalar</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 stats-grid stats-grid-4">
+                    <div class="ser-icone">
+                        <span class="fa fa-lightbulb-o font" aria-hidden="true"></span>
+
+                        <div class="counter">32</div>
+                        <div class="stat-info-w3ls">
+                            <h4>Projeler</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                @foreach (var x in Model)
+                {
+                    <div class="w3l_about_bottom_grid_right bar-grids">
+                        <h6>@x.Yetenek<span> @x.Oran% </span></h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" style="width: 100%">
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+            <section class="resume-section" id="awards">
+                @Html.Action("Sertifikalarım")
+            </section>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
 </div>
